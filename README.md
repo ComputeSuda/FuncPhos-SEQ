@@ -4,11 +4,12 @@ FuncPhos-SEQ: a deep learning method for phosphosite functional prioritization w
 
 # System requirement
 FuncPhos-SEQ is develpoed under Linux environment with:
-* Python (3.7.0):
-    - keras==2.4.3
+* Python (3.10.4):
+    - keras==2.8.0
     - networkx==2.6.3
+    - scipy==1.7.3
     - scikit-learn==0.24.2
-    - numpy==1.19.5
-    - tensorflow==2.4.1
+    - numpy==1.23.3
+    - tensorflow==2.8.0
     - biopython==1.78
     - prody==2.0

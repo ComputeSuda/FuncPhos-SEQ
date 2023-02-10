@@ -20,6 +20,7 @@ You can install the dependent packages by the following commands:
     - pip install tensorflow==2.8.0
 # Dataset
 We provide phosphosite data, collected from five databases - PSP, EPSD, PLMD, IPTMNet and PTMD - detailing information on phosphosites and their regulation of molecular functions, biological processes and intermolecular interactions.
-#predict test data
-- If you want to use the model to predict phosphorylation site function,run the following command(The test data required to run can be found in the Datasets\example folder; you can also provide your own data, which needs to be in the same format as the test data))：
+
+# predict test data
+If you want to use the model to predict phosphorylation site function,run the following command(The test data required to run can be found in the Datasets\example folder; you can also provide your own data, which needs to be in the same format as the test data))：
 python ./src/model/FuncPhos_SEQ.py

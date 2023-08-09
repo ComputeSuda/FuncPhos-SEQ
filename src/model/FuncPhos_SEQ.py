@@ -495,7 +495,7 @@ if __name__ == "__main__":
     # sample  and split regular data
     print('start sample data')
     for i in [2]:
-        predict_file_name='activity_st2_'+str(i)
+        predict_file_name='activity_st2'
         split_train_file = predict_file_name+'_train.xlsx'
         split_test_file = predict_file_name+'_test.xlsx'
         # specific_function = 'activity'

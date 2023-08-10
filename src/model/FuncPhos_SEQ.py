@@ -448,21 +448,21 @@ def train_seq_pssm_feature2_model(train_data1, train_data2,feature_train,feature
     dim6=feature_train1.shape[1]
     # print(dim1, dim2, dim3)
     # sys.exit()
-    for model_num in range(5):
+    for model_num in range(1):
         print(model_num)
-    if model_name == 'cnn':
-        model = build_seq_pssm_feature2_model(dim1, dim2, dim3,dim4,dim5,dim6)
-        model.compile(optimizer=optimizers.RMSprop(lr=0.0001, epsilon=1e-08), loss='binary_crossentropy', metrics=['acc'])
-        save_file = model_path+ str(model_num) + '.h5'
-        print(model.summary())
-        # print(data.shape, label.shape)
-        model.fit([train_data1,train_data2,feature_train,feature_train1], train_label, epochs=200, batch_size=64, verbose=1)
-        model.save(save_file)
+        if model_name == 'cnn':
+            model = build_seq_pssm_feature2_model(dim1, dim2, dim3,dim4,dim5,dim6)
+            model.compile(optimizer=optimizers.RMSprop(lr=0.0001, epsilon=1e-08), loss='binary_crossentropy', metrics=['acc'])
+            save_file = model_path+ str(model_num) + '.h5'
+            print(model.summary())
+            # print(data.shape, label.shape)
+            model.fit([train_data1,train_data2,feature_train,feature_train1], train_label, epochs=200, batch_size=64, verbose=1)
+            model.save(save_file)
 def test_seq_pssm_feature2_model(test_data1, test_data2,feature_test,feature_test1,test_label, model_name,model_path,result_path):
     pred_prob = None
     # np.savetxt('label.txt', test_label)
     for model_num in range(1):
-        for i in range(5):
+        for i in range(1):
 
             model = load_model(model_path+ str(i) + '.h5', compile=False,custom_objects={'Self_Attention': Self_Attention,'Position_Embedding':Position_Embedding,'Attention':Attention})
             file = result_path+ str(i) + '.txt'
